@@ -11,7 +11,8 @@ def astar(start_state, goal_state, heuristic):
 
     # Search until the queue is empty or the goal is found
     while not pq.empty():
-
+        #print(heuristic)
+        #print("hi")
         # Get the next state with the lowest f-score
         current = pq.get()
 
@@ -22,7 +23,7 @@ def astar(start_state, goal_state, heuristic):
                 path.append(current)
                 current = parent[tuple(map(tuple, current))]
             path.reverse()
-            return path
+            return len(path)-1, path # Return path length and path
 
         # Generate and process the successors of the current state
         for successor in get_successors(current):
@@ -34,4 +35,4 @@ def astar(start_state, goal_state, heuristic):
                 parent[tuple(map(tuple, successor))] = current
 
     # If the queue is empty, the goal was not found
-    return None
+    return None, None

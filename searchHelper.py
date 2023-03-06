@@ -5,14 +5,7 @@ moves = {
         "left": (0, -1),
         "right": (0, 1)
     }
-
-# Define a function to get the index of the blank space in a state
-def get_blank_index(state):
-    for i, row in enumerate(state):
-        for j, value in enumerate(row):
-            if value == "":
-                return (i, j)
-
+    
 # Define a function to get the successor states of a state
 def get_successors(state):
     successors = []
@@ -24,6 +17,13 @@ def get_successors(state):
             new_state[i][j], new_state[new_i][new_j] = new_state[new_i][new_j], new_state[i][j]
             successors.append(new_state)
     return successors
+
+# Define a function to get the index of the blank space in a state
+def get_blank_index(state):
+    for i, row in enumerate(state):
+        for j, value in enumerate(row):
+            if value == "":
+                return (i, j)
 
 # Checks if a state is the goal state
 def is_goal(state, goal_state):

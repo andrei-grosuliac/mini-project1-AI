@@ -3,6 +3,7 @@ from searchHelper import get_successors, is_goal
 def dfs_8puzzle(state, goal_state, visited):
 
     # Check if the state is the goal state
+    print(state)
     if is_goal(state, goal_state):
         return state
     # Generate the successor states
