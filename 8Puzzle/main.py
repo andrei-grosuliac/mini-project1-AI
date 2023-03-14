@@ -6,9 +6,9 @@ from astar import astar
 import time
 
 start_state = [
-    [2, 8, 3],
-    [1, "", 4],
-    [7, 6, 5]
+    [4, 1, 3],
+    [7, "", 5],
+    [8, 2, 6]
 ]
 
 # start_state = [    
@@ -19,8 +19,8 @@ start_state = [
 
 goal_state = [
     [1, 2, 3],
-    [8, "", 4],
-    [7, 6, 5]
+    [4, 5, 6],
+    [7, 8, ""]
 ]
 
 # Verifying BFS and DFS 
@@ -44,6 +44,7 @@ for heuristic in heuristics:
     print(f"Heuristic: {heuristic}")
     print(f"Time taken for best-first: {time_taken} milliseconds")
     print(f"Length of paths is: {length}")
+    print(f"Solution of paths is: {solution}")
 
     # A*
     start_time = time.time()
@@ -52,6 +53,7 @@ for heuristic in heuristics:
     time_taken = (end_time - start_time) * 1000
     print(f"Time taken for A*: {time_taken} milliseconds")
     print(f"Length of paths is: {length}")
+    print(f"Solution of paths is: {solution}")
 
 
 
